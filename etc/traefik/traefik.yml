@@ -29,10 +29,9 @@ providers:
     directory: /etc/traefik/dynamicConfiguration/
     filename: config.yml
 
-hostResolver:
-  certificatesResolvers:
-    certificateResolver:
-      acme:
-        email: foobar@foo?foo
-        storage: /letsencrypt/acme.json
-        tlsChallenge: true
+certificatesresolvers:
+  certificateResolver:
+    acme:
+      email: foobar@foo?foo
+      storage: /letsencrypt/acme.json
+      tlsChallenge: true
