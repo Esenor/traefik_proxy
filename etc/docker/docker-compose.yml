@@ -1,0 +1,7 @@
+version: "3"
+services:
+  traefik_proxy:
+    build:
+      context: ../..
+      dockerfile: etc/docker/Dockerfile
+    image: efc/traefik-proxy:1.0.0

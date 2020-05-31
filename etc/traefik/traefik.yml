@@ -1,0 +1,30 @@
+# Static Traefik configuration
+
+defaultEntryPoints:
+  - http
+  - https
+
+log:
+  level: error
+
+api:
+  dashboard: true
+
+entryPoints:
+  http:
+    address: ':80'
+  https:
+    address: ':443'
+
+serversTransport:
+  insecureSkipVerify: false
+
+providers:
+  docker:
+    swarmMode: false
+    watch: true
+    exposedbydefault: false
+  file:
+    watch: true
+    directory: /etc/traefik/dynamicConfiguration/
+    filename: config.yml

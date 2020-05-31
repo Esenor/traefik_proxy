@@ -1,0 +1,13 @@
+http:
+  middlewares:
+    base_redirect_http_to_https:
+      redirectRegex:
+        regex: "^http://(.*)"
+        replacement: "https://$1"
+        permanent: true
+    dashboard_digest_auth:
+      digestAuth:
+        removeHeader: true
+        realm: "admin"
+        users:
+          - admin:admin:26b7f9a787bf6a491f4ea6483c79eebe
