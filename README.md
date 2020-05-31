@@ -42,6 +42,7 @@ services:
         - "traefik.http.routers.traefik_secure_dashboard.entrypoints=https"
         - "traefik.http.routers.traefik_secure_dashboard.middlewares=dashboard_digest_auth@file"
     volumes:
+      - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "../traefik/:/etc/traefik/dynamicConfiguration/"
 ```
